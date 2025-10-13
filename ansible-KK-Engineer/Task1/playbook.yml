@@ -1,0 +1,16 @@
+# ------------------------------------------------------------------------------
+# Exercise: Create an empty file /tmp/file.txt on App Server 2
+# Details:
+# - Inventory file: /home/thor/ansible/inventory
+# - App Server 2 IP: 172.16.238.11
+# - User: steve, Password: Am3ric@
+# Validation command: ansible-playbook -i inventory playbook.yml
+# ------------------------------------------------------------------------------
+ - hosts: appservers
+   become: yes
+   tasks:
+     - name: Create an empty file on App Server 2
+       file:
+         path: /tmp/file.txt
+         state: touch
+                      
