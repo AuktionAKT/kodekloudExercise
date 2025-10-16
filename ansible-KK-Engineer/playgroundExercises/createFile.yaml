@@ -1,0 +1,11 @@
+- hosts: web
+  become: yes
+  tasks:
+    - name: create an empty folder
+      file:
+        path: /home/vox
+        state: directory
+    - name: create file inside it
+      file:
+        path: /home/vox
+        state: touch
