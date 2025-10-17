@@ -1,0 +1,12 @@
+- hosts: web
+  become: yes
+  tasks:
+    - name: Create multiple folders
+      file:
+        path: "/home/vox/{{ item }}"
+        state: directory
+      loop:
+        - logs
+        - backups
+        - uploads
+    - name: check if t

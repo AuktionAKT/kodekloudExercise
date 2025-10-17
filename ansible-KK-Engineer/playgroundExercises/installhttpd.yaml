@@ -1,0 +1,11 @@
+- hosts: web
+  become: yes
+  tasks:
+   - name: Install httpd
+     apt:
+       name: apache2
+       state: present
+
+   - name: Display info message
+     debug:
+       msg: "HTTPD installation completed succesfully"
